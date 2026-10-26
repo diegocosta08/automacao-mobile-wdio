@@ -128,3 +128,57 @@ https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio
 Marcos Priotto
 
 Projeto desenvolvido como parte da formação em Engenharia de Qualidade de Software na EBAC.
+---
+
+# English Version
+
+# Mobile Test Automation with Appium — Android
+
+## Goal
+
+Test automation project for an Android application, developed to practice mobile testing techniques.
+
+## What I Developed
+
+- Mobile test automation setup.
+- Interaction with Android application elements.
+- Element identification and test execution.
+- Organization of automated test scenarios.
+- Practice with mobile testing tools and workflows.
+
+## Technologies
+
+- Appium
+- WebdriverIO
+- Android
+- JavaScript
+- Mocha
+
+## Prerequisites
+
+- Node.js and npm installed.
+- Appium and the required drivers configured.
+- Android Studio or a configured Android emulator/device.
+- Git installed.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio.git
+cd Exerc-cio-M26-EBAC-Wdio
+npm install
+```
+
+## Execution
+
+Configure the Android device or emulator and Appium environment according to the project settings. Then run the test script configured in `package.json`.
+
+## Goal of the Practice
+
+Build familiarity with mobile automation, Android test execution, and the WebdriverIO/Appium toolchain.
+
+## Repository
+
+https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio
