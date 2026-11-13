@@ -3,7 +3,7 @@ import formPage from '../pageobjects/forms.page'
 describe('Funcionalidade: Tela de formulário', () => {
 
     beforeEach(async () => {
-        formPage.abrirMenuForm()
+        await formPage.abrirMenuForm()
     });
 
     it('Deve validar se o texto foi preenchido corretamente', async () => {
@@ -25,11 +25,11 @@ describe('Funcionalidade: Tela de formulário', () => {
         await driver.pause(5000)
         //Trocar para OFF // Melhorar este código
         await browser.swipe({
-        direction: 'left',                  // Swipe from right to left
-        duration: 5000,                     // Last for 5 seconds
-        percent: 0.1,                       // Swipe 50% of the scrollableElement
-        scrollableElement: botaoOnOff,  // The element to swipe within
-    })
+            direction: 'left',                  // Swipe from right to left
+            duration: 5000,                     // Last for 5 seconds
+            percent: 0.1,                       // Swipe 50% of the scrollableElement
+            scrollableElement: botaoOnOff,  // The element to swipe within
+        })
         await driver.pause(5000)
     });
 });

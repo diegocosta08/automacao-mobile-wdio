@@ -66,7 +66,7 @@ export const config = {
             "appium:deviceName": process.env.ANDROID_DEVICE_NAME || "Medium Phone",
             "appium:automationName": "uiautomator2",
             "appium:app": process.env.ANDROID_APP_PATH || "app/wdio.apk",
-            "appium:platformVersion": process.env.ANDROID_PLATFORM_VERSION || "9.0"
+            'appium:platformVersion': process.env.ANDROID_PLATFORM_VERSION || '16',
         }
     ],
 
@@ -117,7 +117,7 @@ export const config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium'],
+    services: [],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

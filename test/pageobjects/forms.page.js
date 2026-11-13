@@ -20,7 +20,6 @@ class FormPage {
     }
 
     async selecionarOpcao (txtOpcao) {
-        //Melhorar este método
         await this.dropdown.click()
         const opcao = $(`-android uiautomator:new UiSelector().text(\"${txtOpcao}\")`)
         await opcao.click()

@@ -2,24 +2,24 @@
 
 ## Objetivo
 
-Projeto de automação de testes para uma aplicação Android, desenvolvido durante a formação em Engenharia de Qualidade de Software.
+Projeto de automação de testes mobile para aplicações Android, desenvolvido como parte da formação em Engenharia de Qualidade de Software da EBAC.
 
-Neste projeto desenvolvi automação mobile utilizando WebdriverIO e Appium, com organização baseada em Page Object Model para facilitar manutenção e reutilização dos testes.
+O projeto utiliza WebdriverIO e Appium para executar testes automatizados em dispositivos Android, aplicando conceitos de organização e manutenção de testes com Page Object Model (POM).
 
-## O que desenvolvi
+## Atividades do projeto
 
-- Configuração de automação mobile para Android.
+- Configuração do ambiente de automação mobile para Android.
 - Integração do WebdriverIO com Appium.
 - Execução de testes em emulador ou dispositivo Android.
-- Automação de fluxos de login.
-- Automação de formulários.
-- Automação de ações de Drag and Drop.
-- Automação de gesto Swipe.
-- Organização dos elementos e ações usando Page Object Model.
+- Testes de fluxo de login.
+- Testes de formulários.
+- Testes de ações de Drag and Drop.
+- Testes de gestos Swipe.
+- Organização dos elementos e ações utilizando Page Object Model.
 - Configuração de capabilities, APK e serviço Appium.
-- Investigação de problemas de dispositivo, APK, seletores e timeout.
+- Análise de problemas relacionados a dispositivos, seletores e timeouts.
 
-## Tecnologias
+## Tecnologias utilizadas
 
 - Appium
 - WebdriverIO
@@ -27,7 +27,7 @@ Neste projeto desenvolvi automação mobile utilizando WebdriverIO e Appium, com
 - Mocha
 - Android
 - Android SDK
-- Page Object Model
+- Page Object Model (POM)
 
 ## Pré-requisitos
 
@@ -40,14 +40,14 @@ Neste projeto desenvolvi automação mobile utilizando WebdriverIO e Appium, com
 - Appium.
 - ADB.
 
-Verifique o Node.js e npm:
+Verificar as versões do Node.js e npm:
 
 ```bash
 node --version
 npm --version
 ```
 
-Verifique os dispositivos Android:
+Verificar os dispositivos Android conectados:
 
 ```bash
 adb devices
@@ -55,14 +55,7 @@ adb devices
 
 ## Instalação
 
-Clone o repositório:
-
-```bash
-git clone https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio.git
-cd Exerc-cio-M26-EBAC-Wdio
-```
-
-Instale as dependências:
+Instalar as dependências do projeto:
 
 ```bash
 npm install
@@ -70,11 +63,11 @@ npm install
 
 ## Preparação do ambiente Android
 
-1. Abra o Android Studio.
-2. Inicie um emulador ou conecte um dispositivo físico.
-3. Confirme a conexão com `adb devices`.
-4. Verifique se o APK utilizado pelo projeto está disponível na pasta `app/`.
-5. Inicie o Appium quando necessário.
+1. Abrir o Android Studio.
+2. Iniciar um emulador ou conectar um dispositivo físico.
+3. Confirmar a conexão utilizando `adb devices`.
+4. Verificar se o APK utilizado pelo projeto está disponível na pasta `app/`.
+5. Iniciar o servidor Appium quando necessário.
 
 ```bash
 npx appium
@@ -82,13 +75,13 @@ npx appium
 
 ## Execução dos testes
 
-Executar todos os testes:
+Executar os testes configurados no projeto:
 
 ```bash
 npm test
 ```
 
-Ou:
+Alternativamente:
 
 ```bash
 npx wdio run ./wdio.conf.js
@@ -100,85 +93,29 @@ Executar somente o teste de login:
 npm test -- --spec ./test/specs/login.spec.js
 ```
 
-## Cenários desenvolvidos
+## Cenários de teste
 
 | Cenário | Arquivo | Objetivo |
-|---|---|---|
-| Login | `login.spec.js` | Validar fluxo de login |
+
+| Login | `login.spec.js` | Validar o fluxo de login |
 | Formulários | `forms.spec.js` | Validar preenchimento e interação com formulários |
 | Drag and Drop | `drag.spec.js` | Validar interação de arrastar e soltar |
-| Swipe | `swipe.spec.js` | Validar gesto de deslize |
+| Swipe | `swipe.spec.js` | Validar gestos de deslize |
 
 ## Page Object Model
 
-O projeto separa os elementos e ações das especificações de teste. Os Page Objects concentram localizadores e métodos reutilizáveis, enquanto os arquivos de spec concentram os cenários e as validações.
+O padrão Page Object Model organiza os elementos e as ações da aplicação em estruturas separadas dos arquivos de especificação dos testes.
 
-Essa organização facilita manutenção, reutilização e leitura dos testes.
+Essa abordagem contribui para a reutilização de código, facilita a manutenção e melhora a organização dos cenários automatizados.
 
 ## Resultado esperado
 
-Após a execução, o WebdriverIO apresenta no console o resultado dos cenários, permitindo identificar testes aprovados e falhas na aplicação Android.
-
-## Repositório
-
-https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio
+Após a execução, o WebdriverIO apresenta no terminal os resultados dos testes, permitindo identificar cenários aprovados, falhas e possíveis problemas durante a automação.
 
 ## Autor
 
-Marcos Priotto
+**Diego Costa**
 
-Projeto desenvolvido como parte da formação em Engenharia de Qualidade de Software na EBAC.
----
+Curso: Engenheiro de Qualidade de Software — EBAC.
 
-# English Version
-
-# Mobile Test Automation with Appium — Android
-
-## Goal
-
-Test automation project for an Android application, developed to practice mobile testing techniques.
-
-## What I Developed
-
-- Mobile test automation setup.
-- Interaction with Android application elements.
-- Element identification and test execution.
-- Organization of automated test scenarios.
-- Practice with mobile testing tools and workflows.
-
-## Technologies
-
-- Appium
-- WebdriverIO
-- Android
-- JavaScript
-- Mocha
-
-## Prerequisites
-
-- Node.js and npm installed.
-- Appium and the required drivers configured.
-- Android Studio or a configured Android emulator/device.
-- Git installed.
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio.git
-cd Exerc-cio-M26-EBAC-Wdio
-npm install
-```
-
-## Execution
-
-Configure the Android device or emulator and Appium environment according to the project settings. Then run the test script configured in `package.json`.
-
-## Goal of the Practice
-
-Build familiarity with mobile automation, Android test execution, and the WebdriverIO/Appium toolchain.
-
-## Repository
-
-https://github.com/priottomarcos7-coder/Exerc-cio-M26-EBAC-Wdio
+Projeto de estudos e prática de automação de testes mobile.
