@@ -1,121 +1,132 @@
-# Automação Mobile com Appium — Android
+# Automação Mobile com WebdriverIO e Appium
 
-## Objetivo
+Projeto desenvolvido como atividade prática do curso de Engenharia de Qualidade de Software da EBAC, com o objetivo de aplicar conceitos de automação de testes em aplicativos Android.
 
-Projeto de automação de testes mobile para aplicações Android, desenvolvido como parte da formação em Engenharia de Qualidade de Software da EBAC.
+A automação foi construída utilizando **WebdriverIO e Appium**, executando cenários de teste em um emulador Android. O aplicativo utilizado como base foi o [Native Demo App, disponibilizado pela WebdriverIO](https://github.com/webdriverio/native-demo-app).
 
-O projeto utiliza WebdriverIO e Appium para executar testes automatizados em dispositivos Android, aplicando conceitos de organização e manutenção de testes com Page Object Model (POM).
+## Objetivo do projeto
 
-## Atividades do projeto
-
-- Configuração do ambiente de automação mobile para Android.
-- Integração do WebdriverIO com Appium.
-- Execução de testes em emulador ou dispositivo Android.
-- Testes de fluxo de login.
-- Testes de formulários.
-- Testes de ações de Drag and Drop.
-- Testes de gestos Swipe.
-- Organização dos elementos e ações utilizando Page Object Model.
-- Configuração de capabilities, APK e serviço Appium.
-- Análise de problemas relacionados a dispositivos, seletores e timeouts.
+Desenvolver testes automatizados para validar funcionalidades de um aplicativo mobile, utilizando boas práticas de organização, localização de elementos e validação dos resultados esperados.
 
 ## Tecnologias utilizadas
 
-- Appium
-- WebdriverIO
-- JavaScript
-- Mocha
-- Android
-- Android SDK
-- Page Object Model (POM)
+- **JavaScript** – linguagem utilizada na implementação dos testes.
+- **Node.js e npm** – ambiente de execução e gerenciamento de dependências.
+- **WebdriverIO** – framework de automação.
+- **Appium** – ferramenta de automação mobile.
+- **Android Studio** – configuração e execução do emulador Android.
+- **Appium Inspector** – inspeção de elementos e identificação de seletores.
 
-## Pré-requisitos
+## Cenários automatizados
 
-- Node.js 14 ou superior.
-- npm.
-- JDK.
-- Android SDK.
-- Android Studio.
-- Emulador Android ou dispositivo físico.
-- Appium.
-- ADB.
+O projeto contempla quatro áreas funcionais do aplicativo:
 
-Verificar as versões do Node.js e npm:
+| Funcionalidade | Cenários de teste |
+|---|---|
+| Login | Login válido, e-mail inválido e senha inválida |
+| Forms | Preenchimento de texto, seleção de opção e alternância de botão |
+| Swipe | Gestos de arrastar para baixo, para cima e para os lados |
+| Drag and Drop | Arrastar uma peça e completar o quebra-cabeça |
 
-```bash
-node --version
-npm --version
+Os testes utilizam asserções para verificar se os comportamentos esperados são apresentados pelo aplicativo.
+
+## Organização do projeto
+
+```text
+projeto-mobile-wdio/
+│
+├── app/
+│   └── wdio.apk
+│
+├── chromedriver-mobile/
+│
+├── test/
+│   ├── pageobjects/
+│   │   ├── drag.page.js
+│   │   ├── forms.page.js
+│   │   ├── login.page.js
+│   │   └── swipe.page.js
+│   │
+│   └── specs/
+│       ├── drag.spec.js
+│       ├── forms.spec.js
+│       ├── login.spec.js
+│       └── swipe.spec.js
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── wdio.conf.js
 ```
 
-Verificar os dispositivos Android conectados:
+A estrutura utiliza o padrão **Page Object**, separando os elementos e as ações das telas dos arquivos responsáveis pela execução dos testes.
 
-```bash
-adb devices
-```
+## Configuração do ambiente
 
-## Instalação
+Para executar o projeto, é necessário ter instalado e configurado:
 
-Instalar as dependências do projeto:
+- Node.js e npm;
+- Java JDK;
+- Android Studio e Android SDK;
+- Appium com o driver UiAutomator2;
+- Emulador Android;
+- Variáveis de ambiente `JAVA_HOME` e `ANDROID_HOME`.
+
+O Appium Inspector pode ser utilizado para auxiliar na identificação dos elementos da aplicação.
+
+## Como executar os testes
+
+**1. Instalar as dependências**
+
+Na pasta principal do projeto, execute:
 
 ```bash
 npm install
 ```
 
-## Preparação do ambiente Android
-
-1. Abrir o Android Studio.
-2. Iniciar um emulador ou conectar um dispositivo físico.
-3. Confirmar a conexão utilizando `adb devices`.
-4. Verificar se o APK utilizado pelo projeto está disponível na pasta `app/`.
-5. Iniciar o servidor Appium quando necessário.
+**2. Iniciar o servidor Appium**
 
 ```bash
-npx appium
+appium
 ```
 
-## Execução dos testes
+Mantenha o servidor em execução.
 
-Executar os testes configurados no projeto:
+**3. Iniciar o emulador Android**
 
-```bash
-npm test
-```
+Abra o Android Studio e inicie o emulador configurado para a execução dos testes.
 
-Alternativamente:
+**4. Executar toda a suíte de testes**
+
+Em outro terminal, na pasta do projeto, execute:
 
 ```bash
 npx wdio run ./wdio.conf.js
 ```
 
-Executar somente o teste de login:
+Para executar apenas um arquivo de teste, utilize:
 
 ```bash
-npm test -- --spec ./test/specs/login.spec.js
+npx wdio run ./wdio.conf.js --spec ./test/specs/login.spec.js
 ```
 
-## Cenários de teste
+## Resultado da execução
 
-| Cenário | Arquivo | Objetivo |
+Na execução realizada durante o desenvolvimento, os quatro arquivos de especificação foram executados com sucesso:
 
-| Login | `login.spec.js` | Validar o fluxo de login |
-| Formulários | `forms.spec.js` | Validar preenchimento e interação com formulários |
-| Drag and Drop | `drag.spec.js` | Validar interação de arrastar e soltar |
-| Swipe | `swipe.spec.js` | Validar gestos de deslize |
+- Drag and Drop: 2 testes aprovados;
+- Forms: 3 testes aprovados;
+- Login: 3 testes aprovados;
+- Swipe: 3 testes aprovados.
 
-## Page Object Model
+**Resultado: 11 testes aprovados, sem falhas, em 4 arquivos de especificação.**
 
-O padrão Page Object Model organiza os elementos e as ações da aplicação em estruturas separadas dos arquivos de especificação dos testes.
+## Observações
 
-Essa abordagem contribui para a reutilização de código, facilita a manutenção e melhora a organização dos cenários automatizados.
+A pasta `app/` está incluída no `.gitignore`, conforme a orientação da atividade, para evitar o envio do APK e de arquivos da aplicação ao repositório.
 
-## Resultado esperado
+Para executar os testes localmente, é necessário disponibilizar o arquivo APK no caminho `app/wdio.apk`.
 
-Após a execução, o WebdriverIO apresenta no terminal os resultados dos testes, permitindo identificar cenários aprovados, falhas e possíveis problemas durante a automação.
+---
 
-## Autor
-
-**Diego Costa**
-
-Curso: Engenheiro de Qualidade de Software — EBAC.
-
-Projeto de estudos e prática de automação de testes mobile.
+**Desenvolvido por Diego Costa**
